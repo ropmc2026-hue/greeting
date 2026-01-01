@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026</title>
+    <style>
+        /* CSS STYLES */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+        :root {
+            --primary-gold: #d4af37;
+            --light-gold: #f9e29c;
+            --dark-bg: #050505;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Animated Background Stars */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            z-index: -1;
+        }
+
+        /* The Fireworks Container */
+        .firework {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.5vmin;
+            aspect-ratio: 1;
+            background: transparent;
+            /* Using box-shadow to create multiple particles from one div */
+            box-shadow: 0 0 #fff; 
+            border-radius: 50%;
+            animation: firework-animation 2s infinite;
+        }
+
+        @keyframes firework-animation {
+            0% { 
+                transform: translate(-50%, 60vh);
+                width: 0.5vmin;
+                opacity: 1;
+            }
+            50% { 
+                width: 0.5vmin;
+                opacity: 1;
+            }
+            100% { 
+                width: 45vmin; 
+                opacity: 0; 
+            }
+        }
+
+        .firework, .firework::before, .firework::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0.5vmin;
+            aspect-ratio: 1;
+            background: radial-gradient(circle, var(--light-gold) 0.2vmin, #0000 0) 50% 00%,
+                        radial-gradient(circle, var(--light-gold) 0.3vmin, #0000 0) 00% 50%,
+                        radial-gradient(circle, var(--light-gold) 0.5vmin, #0000 0) 50% 99%,
+                        radial-gradient(circle, var(--light-gold) 0.2vmin, #0000 0) 99% 50%,
+                        radial-gradient(circle, #fff 0.3vmin, #0000 0) 80% 90%,
+                        radial-gradient(circle, #fff 0.5vmin, #0000 0) 95% 90%,
+                        radial-gradient(circle, #fff 0.5vmin, #0000 0) 10% 60%,
+                        radial-gradient(circle, #fff 0.2vmin, #0000 0) 31% 80%,
+                        radial-gradient(circle, #fff 0.3vmin, #0000 0) 80% 10%,
+                        radial-gradient(circle, #fff 0.2vmin, #0000 0) 90% 23%,
+                        radial-gradient(circle, #fff 0.3vmin, #0000 0) 45% 20%,
+                        radial-gradient(circle, #fff 0.5vmin, #0000 0) 13% 24%;
+            background-size: 0.5vmin 0.5vmin;
+            background-repeat: no-repeat;
+        }
+
+        .firework::before { transform: translate(-50%, -50%) rotate(25deg) !important; }
+        .firework::after { transform: translate(-50%, -50%) rotate(-37deg) !important; }
+
+        /* Positioning multiple fireworks */
+        .f2 { left: 30%; top: 40%; animation-delay: -0.5s; }
+        .f3 { left: 70%; top: 30%; animation-delay: -1.2s; }
+        .f4 { left: 80%; top: 70%; animation-delay: -1.8s; }
+
+        /* Main Greeting Card */
+        .card {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            max-width: 90%;
+            animation: card-entry 1.5s ease-out;
+        }
+
+        @keyframes card-entry {
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            color: var(--light-gold);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            margin: 0.5rem 0;
+            background: linear-gradient(to bottom, #cf9d1d 22%, #ffdb58 45%, #cf9d1d 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+        }
+
+        .message {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        .cta-btn {
+            margin-top: 2rem;
+            padding: 12px 30px;
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-gold);
+            color: black;
+            box-shadow: 0 0 20px var(--primary-gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 3.5rem; }
+            h2 { font-size: 1rem; letter-spacing: 4px; }
+            .card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <!-- Fireworks -->
+    <div class="firework"></div>
+    <div class="firework f2"></div>
+    <div class="firework f3"></div>
+    <div class="firework f4"></div>
+
+    <!-- Greeting Card -->
+    <div class="card">
+        <h2>Happy New Year</h2>
+        <h1>2026</h1>
+        <p class="message">
+            May the coming year bring you peace, prosperity, and endless opportunities. 
+            Cheers to a fresh start!
+        </p>
+        <button class="cta-btn" onclick="celebrate()">Cheers!</button>
+    </div>
+
+    <script>
+        function celebrate() {
+            alert("✨ Happy 2026! May your code always compile on the first try! ✨");
+        }
+    </script>
+
+</body>
+</html>
